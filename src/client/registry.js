@@ -1,15 +1,23 @@
 Vue.component("tab-dt", {
-	props: ['title', 'items'],
+	props: ['title'],
 	data: function () {
 		return {
-			picked: '',
-			list_of_regs: ['0.1','0.2']
+			items: []
 		}
+	},
+	methods: {
+		add_item: function () {
+			this.items.push({product_name: 'new',
+					 unit_price: 0.0,
+					 unit_dimension: '%',
+					 units_in_stock: 0,
+					 discontinued: true});
+		},
 	},
 	template: `
 		<div id="tab-dt"> \
 			{{ title }} \
-			<button v-on:click="$emit('add')">Add</button> \
+			<button v-on:click="add_item()">Add</button> \
 			<table> \
 				<tr> \
 					<th>Product name</th> \
@@ -50,10 +58,6 @@ var appdt = new Vue({
 	},
 	methods: {
 		get_item_list: function () {return array_items;},
-		do_add: function () {
-			console.log("add empty");
-			this.seen = false;
-		},
 		do_edit: function (selected) {
 			console.log(selected);
 			this.seen = false;
