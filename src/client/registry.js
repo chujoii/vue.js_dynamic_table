@@ -13,6 +13,9 @@ Vue.component("tab-dt", {
 					 units_in_stock: 0,
 					 discontinued: true});
 		},
+		delete_item: function (idx) {
+			this.items.splice(idx, 1);
+		},
 	},
 	template: `
 		<div id="tab-dt"> \
@@ -41,7 +44,7 @@ Vue.component("tab-dt", {
 					</td> \
 					<td> \
 						<button v-on:click="$emit('edit', index)">Edit</button> \
-						<button v-on:click="$emit('delete', index)">Delete</button> \
+						<button v-on:click="delete_item(index)">Delete</button> \
 					</td> \
 				</tr> \
 			</table> \
@@ -59,10 +62,6 @@ var appdt = new Vue({
 	methods: {
 		get_item_list: function () {return array_items;},
 		do_edit: function (selected) {
-			console.log(selected);
-			this.seen = false;
-		},
-		do_delete: function (selected) {
 			console.log(selected);
 			this.seen = false;
 		}
