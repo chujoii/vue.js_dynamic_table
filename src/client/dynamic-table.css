@@ -48,3 +48,22 @@ legend {
 	color: white;
 	padding: 3px 10px;
 }
+
+.bottom {
+          background-color: grey;
+          z-index: 1001;
+          moz-opacity: 0.5;
+          opacity: .50;
+          filter: alpha(opacity=50);
+}
+
+.top {
+       position: absolute;
+       top: 25%;
+       left: 25%;
+       width: 50%;
+       height: 50%;
+       background-color: white;
+       z-index: 1002;
+       overflow: auto;
+}
