@@ -35,7 +35,7 @@ Vue.component("tab-ei", {
 				</li> \
 			</ul> \
 			<button v-on:click="$emit('edit', {product_name: product_name, unit_price: unit_price, unit_dimension: unit_dimension, units_in_stock: units_in_stock, discontinued: discontinued})">Update</button> \
-			<button v-on:click="this.seen=false">Cancel</button> \
+			<button v-on:click="$emit('esc')">Cancel</button> \
 		</div> \
 `
 });
@@ -50,6 +50,10 @@ var appei = new Vue({
 	methods: {
 		do_update: function (selected) {
 			global_array_items[global_index] = selected;
+			this.seen = false;
+			appdt.seen = true;
+		},
+		do_esc: function () {
 			this.seen = false;
 			appdt.seen = true;
 		}
