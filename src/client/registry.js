@@ -57,6 +57,7 @@ var appdt = new Vue({
 	data: function () {
 		return {
 			seen: true,
+			fade: false,
 		}
 	},
 	methods: {
@@ -65,7 +66,7 @@ var appdt = new Vue({
 			global_index = index;
 			global_element = element;
 
-			this.seen = false;
+			this.fade = true;
 			appei.seen = true;
 		}
 	}

@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="dynamic-table.css">
 	</head>
 	<body>
-		<fieldset id="dynamic_table" v-if="seen">
+		<fieldset id="dynamic_table" v-if="seen" v-bind:class="{ bottom: fade }">
 			<legend>dynamic table</legend>
 			<tab-dt title="you table:"
 				v-bind:items="get_item_list()"
@@ -21,7 +21,7 @@
 
 
 
-		<fieldset id="edit_item" v-if="seen">
+		<fieldset id="edit_item" v-if="seen" class="top">
 			<legend>edit item</legend>
 			<tab-ei title="you item:"
 				v-on:edit="do_update"

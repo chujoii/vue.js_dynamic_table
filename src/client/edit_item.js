@@ -51,11 +51,23 @@ var appei = new Vue({
 		do_update: function (selected) {
 			global_array_items[global_index] = selected;
 			this.seen = false;
-			appdt.seen = true;
+			appdt.fade = false;
+
+			this.do_rerender(); // fixme: global variable updated
 		},
 		do_esc: function () {
 			this.seen = false;
-			appdt.seen = true;
+			appdt.fade = false;
+		},
+		do_rerender: function() {
+			appdt.seen = false
+			appdt.$nextTick(() => {
+				appdt.seen = true
+				console.log('re-render start')
+				appdt.$nextTick(() => {
+					console.log('re-render end')
+				})
+			})
 		}
 	}
 });
