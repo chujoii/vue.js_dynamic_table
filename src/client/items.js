@@ -1,4 +1,6 @@
-var array_items = [ // fixme: move to external database
+var global_index = 0; // fixme: remove global variable
+
+var global_array_items = [ // fixme: revome global variable
 	{product_name: 'foo',
 	 unit_price: 1.23,
 	 unit_dimension: '%',
