@@ -1,3 +1,5 @@
+"use strict";
+
 var global_index = 0; // fixme: remove global variable
 
 var global_array_items = [ // fixme: revome global variable

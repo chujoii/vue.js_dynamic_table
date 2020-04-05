@@ -1,3 +1,5 @@
+"use strict";
+
 Vue.component("tab-dt", {
 	props: ['title'],
 	data: function () {
@@ -19,8 +21,8 @@ Vue.component("tab-dt", {
 	},
 	template: `
 		<div id="tab-dt"> \
-			{{ title }} \
-			<button v-on:click="add_item()">Add</button> \
+			{{ title }} <br/>\
+			<button v-on:click="add_item()">+ Add new record</button> \
 			<table> \
 				<tr> \
 					<th>Product name</th> \

@@ -11,7 +11,8 @@ This file is part of vue.js_dynamic_table.
 dynamic table Vue.js JavaScript
 
 * Description:
-Single-page application writen with Vue.js
+Single-page application writen with Vue.js for demonstrate work with
+dynamic table (add, edit and delete element)
 
 * Usage:
 View in browser with JavaScript support.

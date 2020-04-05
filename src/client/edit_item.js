@@ -1,3 +1,5 @@
+"use strict";
+
 Vue.component("tab-ei", {
 	props: ['title'],
 	data: function () {
